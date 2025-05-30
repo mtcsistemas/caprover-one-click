@@ -1,0 +1,12 @@
+[
+    {
+      "id": "signoz",
+      "title": "SigNoz",
+      "description": "Monitoring y trazas con ClickHouse y Cassandra",
+      "logoUrl": "https://tu-dominio.com/logos/signoz.png",
+      "gitRepo": "https://github.com/mtcsistemas/caprover-one-click.git",
+      "gitBranch": "master",
+      "captainDefinitionPath": "docker-compose.yml"
+    }
+]
+  
