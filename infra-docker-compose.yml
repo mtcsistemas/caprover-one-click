@@ -1,0 +1,38 @@
+version: "3"
+x-common: &common
+  networks:
+    - signoz-net
+  extra_hosts:
+    - host.docker.internal:host-gateway
+  logging:
+    options:
+      max-size: 50m
+      max-file: "3"
+  restart: unless-stopped
+services:
+  otel-agent:
+    <<: *common
+    image: otel/opentelemetry-collector-contrib:0.111.0
+    command:
+      - --config=/etc/otel-collector-config.yaml
+    volumes:
+      - ./otel-collector-config.yaml:/etc/otel-collector-config.yaml
+      - /:/hostfs:ro
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - SIGNOZ_COLLECTOR_ENDPOINT=http://host.docker.internal:4317    # En caso de SigNoz externo o cloud, actualiza el endpoint y añade SIGNOZ_ACCESS_TOKEN
+      - OTEL_RESOURCE_ATTRIBUTES=host.name=signoz-host,os.type=linux  # Reemplaza signoz-host con el hostname real
+  logspout:
+    <<: *common
+    image: "gliderlabs/logspout:v3.2.14"
+    volumes:
+      - /etc/hostname:/etc/host_hostname:ro
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: syslog+tcp://otel-agent:2255
+    depends_on:
+      - otel-agent
+
+networks:
+  signoz-net:
+    name: signoz-net
+    external: true
