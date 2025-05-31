@@ -1,12 +1,11 @@
 [
-    {
-      "id": "signoz",
-      "title": "SigNoz",
-      "description": "SigNoz One-Click App for CapRover",
-      "logoUrl": "https://tu-dominio.com/logos/signoz.png",
-      "gitRepo": "https://github.com/mtcsistemas/caprover-one-click.git",
-      "gitBranch": "master",
-      "captainDefinitionPath": "signoz-oneclick/captain-definition.json"
-    }
+  {
+    "id": "signoz",
+    "title": "SigNoz",
+    "description": "SigNoz One-Click App for CapRover",
+    "logoUrl": "https://raw.githubusercontent.com/mtcsistemas/caprover-one-click/master/signoz-oneclick/logo.png",
+    "gitRepo": "https://github.com/mtcsistemas/caprover-one-click.git",
+    "gitBranch": "master",
+    "captainDefinitionPath": "signoz-oneclick/captain-definition.json"
+  }
 ]
-  
