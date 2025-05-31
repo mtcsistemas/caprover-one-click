@@ -6,7 +6,7 @@
       "logoUrl": "https://tu-dominio.com/logos/signoz.png",
       "gitRepo": "https://github.com/mtcsistemas/caprover-one-click.git",
       "gitBranch": "master",
-      "captainDefinitionPath": "captain-definition.json"
+      "captainDefinitionPath": "signoz-oneclick/captain-definition.json"
     }
 ]
   
