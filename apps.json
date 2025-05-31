@@ -2,7 +2,7 @@
     {
       "id": "signoz",
       "title": "SigNoz",
-      "description": "Monitoring y trazas con ClickHouse y Cassandra",
+      "description": "SigNoz One-Click App for CapRover",
       "logoUrl": "https://tu-dominio.com/logos/signoz.png",
       "gitRepo": "https://github.com/mtcsistemas/caprover-one-click.git",
       "gitBranch": "master",
